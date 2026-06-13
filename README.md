@@ -81,4 +81,27 @@ docker-compose -f docker-compose.yml --env-file environment.env up
 
 ##INSTALLING KAFKA IN WINDOWS
 https://www.confluent.io/blog/set-up-and-run-kafka-on-windows-linux-wsl-2/
-	
+
+
+##configuring kafka server in WINDOWS
+./kafka-storage.sh random-uuid
+
+./kafka-storage.sh format -t IcZd1BNeSRO6DpCRla9BaA -c ../config/kraft/server.properties
+
+mkdir -p /d/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/kafka/logs
+
+export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/kafka/logs"
+
+./kafka-server-start.sh ../config/kraft/server.properties
+
+## when multiple server not starting use this one 	
+./kafka-storage.sh format -t IcZd1BNeSRO6DpCRla9BaA -c ../config/kraft/server-1.properties
+./kafka-storage.sh format -t IcZd1BNeSRO6DpCRla9BaA -c ../config/kraft/server-2.properties
+./kafka-storage.sh format -t IcZd1BNeSRO6DpCRla9BaA -c ../config/kraft/server-3.properties
+
+export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/kafka/logs"
+./kafka-server-start.sh ../config/kraft/server-1.properties
+export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/kafka/logs"
+./kafka-server-start.sh ../config/kraft/server-2.properties
+export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/kafka/logs"
+./kafka-server-start.sh ../config/kraft/server-3.properties
