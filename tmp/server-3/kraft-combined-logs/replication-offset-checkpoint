@@ -8,7 +8,7 @@ __consumer_offsets 26 0
 __consumer_offsets 19 0
 topic1 1 0
 topic2 0 0
-__consumer_offsets 41 0
+__consumer_offsets 41 1
 topic1 2 0
 __consumer_offsets 8 0
 __consumer_offsets 22 0
@@ -17,8 +17,8 @@ __consumer_offsets 3 0
 __consumer_offsets 42 0
 __consumer_offsets 28 0
 __consumer_offsets 1 0
-__consumer_offsets 12 0
-__consumer_offsets 15 1
+__consumer_offsets 12 3
+__consumer_offsets 15 3
 __consumer_offsets 38 0
 topic2 2 0
 __consumer_offsets 34 0
