@@ -136,3 +136,4 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 
 ## consume new message from kafka producer
 ./kafka-console-consumer.sh --topic my-topic  --bootstrap-server [::1]:9092
+
