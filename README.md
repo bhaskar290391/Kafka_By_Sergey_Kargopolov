@@ -137,3 +137,8 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 ## consume new message from kafka producer
 ./kafka-console-consumer.sh --topic my-topic  --bootstrap-server [::1]:9092
 
+## consume message and display in key value pair
+./kafka-console-consumer.sh --topic my-topic  --property print.key=true --property print.value=true --from-beginning --bootstrap-server [::1]:9092
+
+## consume message and display in only key not value  pair
+./kafka-console-consumer.sh --topic my-topic  --property print.key=true --property print.value=false --from-beginning --bootstrap-server [::1]:9092
