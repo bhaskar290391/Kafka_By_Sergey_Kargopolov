@@ -95,9 +95,9 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 ./kafka-server-start.sh ../config/kraft/server.properties
 
 ## when multiple server not starting use this one 	
-./kafka-storage.sh format -t IcZd1BNeSRO6DpCRla9BaA -c ../config/kraft/server-1.properties
-./kafka-storage.sh format -t IcZd1BNeSRO6DpCRla9BaA -c ../config/kraft/server-2.properties
-./kafka-storage.sh format -t IcZd1BNeSRO6DpCRla9BaA -c ../config/kraft/server-3.properties
+./kafka-storage.sh format -t weeoR857QJ6YJwaqwBtTxQ -c ../config/kraft/server-1.properties
+./kafka-storage.sh format -t weeoR857QJ6YJwaqwBtTxQ -c ../config/kraft/server-2.properties
+./kafka-storage.sh format -t weeoR857QJ6YJwaqwBtTxQ -c ../config/kraft/server-3.properties
 
 export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/kafka/logs"
 ./kafka-server-start.sh ../config/kraft/server-1.properties
@@ -122,3 +122,6 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 
 ## delete kafka topic 
 ./kafka-topics.sh --delete --topic topic2 --bootstrap-server [::1]:9092
+
+## Send a message without key to kafka topic  
+./kafka-console-producer.sh --bootstrap-server [::1]:9092,[::1]:9094 --topic my-topic
