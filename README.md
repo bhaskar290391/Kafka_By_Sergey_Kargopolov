@@ -105,3 +105,8 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 ./kafka-server-start.sh ../config/kraft/server-2.properties
 export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/kafka/logs"
 ./kafka-server-start.sh ../config/kraft/server-3.properties
+
+
+./kafka-server-stop.sh ../config/kraft/server-1.properties
+./kafka-server-stop.sh ../config/kraft/server-2.properties
+./kafka-server-stop.sh ../config/kraft/server-3.properties
