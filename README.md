@@ -110,3 +110,7 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 ./kafka-server-stop.sh ../config/kraft/server-1.properties
 ./kafka-server-stop.sh ../config/kraft/server-2.properties
 ./kafka-server-stop.sh ../config/kraft/server-3.properties
+
+## How to create Topic user Kafka server CLI
+./kafka-topics.sh --create --topic topic1 --partitions 3 --replication-factor 3 --bootstrap-server [::1]:9092,[::1]:9094
+./kafka-topics.sh --create --topic topic2 --partitions 3 --replication-factor 3 --bootstrap-server [::1]:9092,[::1]:9094
