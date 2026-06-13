@@ -119,3 +119,6 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 ## List down topic create in brokers
 ./kafka-topics.sh --list --bootstrap-server [::1]:9092
 ./kafka-topics.sh --describe --bootstrap-server [::1]:9092
+
+## delete kafka topic 
+./kafka-topics.sh --delete --topic topic2 --bootstrap-server [::1]:9092
