@@ -128,4 +128,8 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 
 
 ## Send a message key value to kafka topic  
-./kafka-console-producer.sh --bootstrap-server [::1]:9092,[::1]:9094 --topic my-topic
+./kafka-console-producer.sh --bootstrap-server [::1]:9092,[::1]:9094 --topic my-topic --property "parse.key=true" --property "key.separator=:"
+
+
+## consume message from beginning from kafka producer
+./kafka-console-consumer.sh --topic my-topic --from-beginning --bootstrap-server [::1]:9092
