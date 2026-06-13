@@ -114,3 +114,8 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 ## How to create Topic user Kafka server CLI
 ./kafka-topics.sh --create --topic topic1 --partitions 3 --replication-factor 3 --bootstrap-server [::1]:9092,[::1]:9094
 ./kafka-topics.sh --create --topic topic2 --partitions 3 --replication-factor 3 --bootstrap-server [::1]:9092,[::1]:9094
+
+
+## List down topic create in brokers
+./kafka-topics.sh --list --bootstrap-server [::1]:9092
+./kafka-topics.sh --describe --bootstrap-server [::1]:9092
