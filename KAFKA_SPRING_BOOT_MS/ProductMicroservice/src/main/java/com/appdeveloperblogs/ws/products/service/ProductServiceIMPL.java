@@ -2,6 +2,7 @@ package com.appdeveloperblogs.ws.products.service;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,24 +25,35 @@ public class ProductServiceIMPL implements ProductService {
 	}
 
 	@Override
-	public String createProduct(CreateProductResModel product) {
+	public String createProduct(CreateProductResModel product) throws Exception {
 
 		String productId = UUID.randomUUID().toString();
 
 		ProductCreatedEvent eventData = new ProductCreatedEvent(productId, product.getTitle(), product.getQuantity(),
 				product.getPrices());
 
-		CompletableFuture<SendResult<String, ProductCreatedEvent>> dataEvent = kafkaTemplate
+		/*
+		 
+		 	CompletableFuture<SendResult<String, ProductCreatedEvent>> dataEvent = kafkaTemplate
 				.send("product-create-event-topic", productId, eventData);
 
-		dataEvent.whenComplete((result, exception) -> {
-
-			if (exception != null) {
-				logger.error("******* Failed to send a message ==>" + exception.getMessage());
-			} else {
-				logger.info("******* Message Sent successfully " + result.getRecordMetadata());
-			}
+			dataEvent.whenComplete((result, exception) -> {
+	
+				if (exception != null) {
+					logger.error("******* Failed to send a message ==>" + exception.getMessage());
+				} else {
+					logger.info("******* Message Sent successfully " + result.getRecordMetadata());
+				}
 		});
+		
+		 */
+	
+	 	SendResult<String, ProductCreatedEvent> dataEvent = kafkaTemplate
+				.send("product-create-event-topic", productId, eventData).get();
+	 	
+	 	logger.info("Topics ==>"+dataEvent.getRecordMetadata().topic());
+	 	logger.info("Offset ==>"+dataEvent.getRecordMetadata().offset());
+	 	logger.info("Partitions ==>"+dataEvent.getRecordMetadata().partition());
 
 		logger.info("**************** Returning Product Id");
 		return productId;

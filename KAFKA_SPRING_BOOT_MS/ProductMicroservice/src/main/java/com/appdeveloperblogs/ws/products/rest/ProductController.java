@@ -1,5 +1,9 @@
 package com.appdeveloperblogs.ws.products.rest;
 
+import java.util.Date;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +18,7 @@ import com.appdeveloperblogs.ws.products.service.ProductService;
 @RequestMapping("/products")
 public class ProductController {
 
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	private ProductService service;
 	
 	public ProductController(ProductService service) {
@@ -21,8 +26,14 @@ public class ProductController {
 	}
 
 	@PostMapping()
-	public ResponseEntity<String> createProduct(@RequestBody CreateProductResModel product){
-		String productId= service.createProduct(product);
+	public ResponseEntity<Object> createProduct(@RequestBody CreateProductResModel product){
+		String productId;
+		try {
+			productId = service.createProduct(product);
+		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
+			return ResponseEntity.status(HttpStatus.CREATED).body(new ErrorMessage(new Date(),HttpStatus.INTERNAL_SERVER_ERROR.toString(),"/products"));
+		}
 		return ResponseEntity.status(HttpStatus.CREATED).body(productId);
 	}
 }
