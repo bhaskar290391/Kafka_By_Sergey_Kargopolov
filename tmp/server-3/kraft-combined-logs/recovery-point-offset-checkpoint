@@ -20,7 +20,7 @@ product-created-event-topic 1 0
 product-create-event-topic 2 1
 __consumer_offsets 49 3
 product-create-event-topic 0 2
-insync-replicas-topic 1 1
+insync-replicas-topic 1 2
 __consumer_offsets 27 0
 __consumer_offsets 39 0
 __consumer_offsets 2 2
