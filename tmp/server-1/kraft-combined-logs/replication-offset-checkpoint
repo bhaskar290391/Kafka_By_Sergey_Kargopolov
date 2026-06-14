@@ -18,4 +18,4 @@ __consumer_offsets 16 0
 __consumer_offsets 34 0
 __consumer_offsets 9 0
 __consumer_offsets 14 0
-product-created-event-topic 0 0
+product-created-event-topic 0 1
