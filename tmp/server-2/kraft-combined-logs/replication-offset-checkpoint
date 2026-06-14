@@ -10,7 +10,7 @@ __consumer_offsets 48 0
 __consumer_offsets 25 0
 __consumer_offsets 18 0
 __consumer_offsets 41 0
-insync-replicas-topic 0 1
+insync-replicas-topic 0 2
 __consumer_offsets 46 0
 __consumer_offsets 23 0
 product-create-event-topic 2 1
