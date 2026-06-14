@@ -16,3 +16,8 @@
 [2026-06-14 13:22:47,255] INFO Starting the log cleaner (kafka.log.LogCleaner)
 [2026-06-14 13:25:00,851] INFO Shutting down the log cleaner. (kafka.log.LogCleaner)
 [2026-06-14 13:30:08,655] INFO Shutting down the log cleaner. (kafka.log.LogCleaner)
+[2026-06-14 13:48:47,425] INFO Starting the log cleaner (kafka.log.LogCleaner)
+[2026-06-14 13:48:47,785] INFO Starting the log cleaner (kafka.log.LogCleaner)
+[2026-06-14 17:08:31,530] INFO Starting the log cleaner (kafka.log.LogCleaner)
+[2026-06-14 17:08:31,962] INFO Starting the log cleaner (kafka.log.LogCleaner)
+[2026-06-14 17:08:39,754] INFO Starting the log cleaner (kafka.log.LogCleaner)
