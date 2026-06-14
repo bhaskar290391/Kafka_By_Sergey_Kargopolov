@@ -1,5 +1,5 @@
 0
-20
+23
 __consumer_offsets 16 0
 __consumer_offsets 48 0
 __consumer_offsets 13 0
@@ -9,10 +9,13 @@ __consumer_offsets 41 0
 __consumer_offsets 10 0
 __consumer_offsets 23 0
 product-created-event-topic 0 0
-product-create-event-topic 2 0
-product-create-event-topic 1 0
+product-create-event-topic 2 1
+product-create-event-topic 1 2
 __consumer_offsets 18 0
+insync-replicas-topic 0 1
+insync-replicas-topic 1 1
 __consumer_offsets 32 0
+insync-replicas-topic 2 0
 __consumer_offsets 29 0
 __consumer_offsets 25 0
 __consumer_offsets 6 0

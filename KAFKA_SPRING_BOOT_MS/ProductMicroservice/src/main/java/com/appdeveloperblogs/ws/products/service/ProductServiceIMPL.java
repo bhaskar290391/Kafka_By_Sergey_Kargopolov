@@ -49,7 +49,7 @@ public class ProductServiceIMPL implements ProductService {
 		 */
 	
 	 	SendResult<String, ProductCreatedEvent> dataEvent = kafkaTemplate
-				.send("product-create-event-topic", productId, eventData).get();
+				.send("insync-replicas-topic", productId, eventData).get();
 	 	
 	 	logger.info("Topics ==>"+dataEvent.getRecordMetadata().topic());
 	 	logger.info("Offset ==>"+dataEvent.getRecordMetadata().offset());
