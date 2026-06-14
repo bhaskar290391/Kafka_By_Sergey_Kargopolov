@@ -10,7 +10,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 
-import com.appdeveloperblogs.ws.products.event.ProductCreatedEvent;
+import com.appdeveloperblogs.core.event.ProductCreatedEvent;
 import com.appdeveloperblogs.ws.products.model.CreateProductResModel;
 
 @Service
@@ -49,7 +49,7 @@ public class ProductServiceIMPL implements ProductService {
 		 */
 	
 	 	SendResult<String, ProductCreatedEvent> dataEvent = kafkaTemplate
-				.send("insync-replicas-topic", productId, eventData).get();
+				.send("product-created-event-topic", productId, eventData).get();
 	 	
 	 	logger.info("Topics ==>"+dataEvent.getRecordMetadata().topic());
 	 	logger.info("Offset ==>"+dataEvent.getRecordMetadata().offset());

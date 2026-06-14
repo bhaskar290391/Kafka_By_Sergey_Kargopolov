@@ -13,7 +13,9 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
-import com.appdeveloperblogs.ws.products.event.ProductCreatedEvent;
+import com.appdeveloperblogs.core.event.ProductCreatedEvent;
+
+
 
 @Configuration
 public class KafkaConfig {
@@ -57,7 +59,7 @@ public class KafkaConfig {
 		config.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, requestTimeout);
 		config.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, producerIdempotence);
 		config.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION,inFlightRequest);
-		config.put(ProducerConfig.RETRIES_CONFIG,Integer.MAX_VALUE);
+		//config.put(ProducerConfig.RETRIES_CONFIG,Integer.MAX_VALUE);
 		return config;
 	}
 
@@ -72,7 +74,7 @@ public class KafkaConfig {
 	}
 	@Bean
 	public NewTopic createTopic() {
-		return TopicBuilder.name("product-create-event-topic").partitions(3).replicas(2)
+		return TopicBuilder.name("product-created-event-topic").partitions(3).replicas(2)
 				.configs(Map.of("min.insync.replicas", "2")).build();
 	}
 }
