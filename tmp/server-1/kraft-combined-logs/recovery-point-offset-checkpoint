@@ -1,5 +1,5 @@
 0
-19
+20
 __consumer_offsets 47 0
 __consumer_offsets 16 0
 __consumer_offsets 14 0
@@ -14,6 +14,7 @@ __consumer_offsets 20 0
 __consumer_offsets 49 0
 __consumer_offsets 32 0
 __consumer_offsets 28 0
+product-created-event-topic.DLT 0 0
 __consumer_offsets 5 0
 __consumer_offsets 38 0
 __consumer_offsets 6 0

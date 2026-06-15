@@ -131,17 +131,27 @@ eplicas=2
 ## Send a message key value to kafka topic  
 ./kafka-console-producer.sh --bootstrap-server [::1]:9092,[::1]:9094 --topic my-topic --property "parse.key=true" --property "key.separator=:"
 
-./kafka-console-producer.sh --bootstrap-server [::1]:9092,[::1]:9094 --topic my-topic --property "parse.key=true" --property "key.separator=:"
+./kafka-console-producer.sh --bootstrap-server [::1]:9092,[::1]:9094 --topic product-created-event-topic --property "parse.key=true" --property "key.separator=:"
 
 
 ## consume message from beginning from kafka producer
 ./kafka-console-consumer.sh --topic my-topic --from-beginning --bootstrap-server [::1]:9092
 
+
+
+
 ## consume new message from kafka producer
 ./kafka-console-consumer.sh --topic my-topic  --bootstrap-server [::1]:9092
 
 ## consume message and display in key value pair
-./kafka-console-consumer.sh --topic my-topic  --property print.key=true --property print.value=true --from-beginning --bootstrap-server [::1]:9092
+./kafka-console-consumer.sh --topic product-created-event-topic.dlt  --property print.key=true --property print.value=true --from-beginning --bootstrap-server [::1]:9092
 
 ## consume message and display in only key not value  pair
 ./kafka-console-consumer.sh --topic my-topic  --property print.key=true --property print.value=false --from-beginning --bootstrap-server [::1]:9092
+
+
+############################ Dead Letter Topic ##################################
+./kafka-console-consumer.sh --topic product-created-event-topic.DLT --from-beginning --bootstrap-server [::1]:9092
+./kafka-console-consumer.sh --topic product-created-event-topic-dlt-2 --from-beginning --bootstrap-server [::1]:9092
+./kafka-console-consumer.sh --topic product-created-event-topic-dlt --from-beginning --bootstrap-server [::1]:9092
+ 
