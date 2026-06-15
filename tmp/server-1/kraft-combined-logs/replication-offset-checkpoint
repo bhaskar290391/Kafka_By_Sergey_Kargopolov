@@ -9,7 +9,7 @@ product-created-event-topic.DLT 0 0
 __consumer_offsets 22 3
 __consumer_offsets 24 0
 __consumer_offsets 49 0
-product-created-event-topic 2 6
+product-created-event-topic 2 8
 __consumer_offsets 28 0
 __consumer_offsets 2 0
 __consumer_offsets 5 0
@@ -19,4 +19,4 @@ __consumer_offsets 16 3
 __consumer_offsets 34 1
 __consumer_offsets 9 0
 __consumer_offsets 14 0
-product-created-event-topic 0 16
+product-created-event-topic 0 21

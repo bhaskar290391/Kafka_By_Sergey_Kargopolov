@@ -151,7 +151,6 @@ eplicas=2
 
 
 ############################ Dead Letter Topic ##################################
-./kafka-console-consumer.sh --topic product-created-event-topic.DLT --from-beginning --bootstrap-server [::1]:9092
-./kafka-console-consumer.sh --topic product-created-event-topic-dlt-2 --from-beginning --bootstrap-server [::1]:9092
+
 ./kafka-console-consumer.sh --topic product-created-event-topic-dlt --from-beginning --bootstrap-server [::1]:9092
  
