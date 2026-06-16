@@ -4,6 +4,7 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -48,8 +49,13 @@ public class ProductServiceIMPL implements ProductService {
 		
 		 */
 	
+		//for adding header for idempotent consumer
+		ProducerRecord<String, ProductCreatedEvent> producerRecord=new ProducerRecord<String, ProductCreatedEvent>("product-created-event-topic", productId, eventData);
+		producerRecord.headers().add("messageId", UUID.randomUUID().toString().getBytes());
+		//producerRecord.headers().add("messageId", "bhaskar".toString().getBytes());
+		
 	 	SendResult<String, ProductCreatedEvent> dataEvent = kafkaTemplate
-				.send("product-created-event-topic", productId, eventData).get();
+				.send(producerRecord).get();
 	 	
 	 	logger.info("Topics ==>"+dataEvent.getRecordMetadata().topic());
 	 	logger.info("Offset ==>"+dataEvent.getRecordMetadata().offset());
