@@ -1,24 +1,20 @@
 0
-22
-__consumer_offsets 15 0
-__consumer_offsets 48 0
-__consumer_offsets 13 0
-__consumer_offsets 46 0
-__consumer_offsets 11 0
-__consumer_offsets 42 0
-__consumer_offsets 23 0
-product-created-event-topic 2 0
-product-created-event-topic 1 0
-__consumer_offsets 18 0
-__consumer_offsets 31 0
-__consumer_offsets 29 0
-__consumer_offsets 26 0
-__consumer_offsets 39 0
-product-created-event-topic.dlt 0 0
-__consumer_offsets 8 0
-product-created-event-topic-dlt 0 0
-__consumer_offsets 37 0
-product-created-event-topic-dlt-2 0 0
-__consumer_offsets 3 0
-__consumer_offsets 33 0
-__consumer_offsets 1 0
+18
+__transaction_state 10 0
+__transaction_state 43 0
+deposit-money-topic 0 0
+__transaction_state 13 0
+__transaction_state 47 0
+__transaction_state 16 0
+__transaction_state 49 0
+__transaction_state 35 0
+__transaction_state 4 0
+__transaction_state 36 0
+__transaction_state 6 0
+__transaction_state 41 0
+__transaction_state 27 0
+__transaction_state 30 0
+__transaction_state 0 0
+__transaction_state 19 0
+__transaction_state 21 0
+__transaction_state 25 0

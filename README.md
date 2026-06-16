@@ -95,9 +95,9 @@ export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/k
 ./kafka-server-start.sh ../config/kraft/server.properties
 
 ## when multiple server not starting use this one 	
-./kafka-storage.sh format -t VBf-9QLCSjy81Mcq2GiMPA -c ../config/kraft/server-1.properties
-./kafka-storage.sh format -t VBf-9QLCSjy81Mcq2GiMPA -c ../config/kraft/server-2.properties
-./kafka-storage.sh format -t VBf-9QLCSjy81Mcq2GiMPA -c ../config/kraft/server-3.properties
+./kafka-storage.sh format -t tCt51IHgR1eL9yIdnKozrw -c ../config/kraft/server-1.properties
+./kafka-storage.sh format -t tCt51IHgR1eL9yIdnKozrw -c ../config/kraft/server-2.properties
+./kafka-storage.sh format -t tCt51IHgR1eL9yIdnKozrw -c ../config/kraft/server-3.properties
 
 export LOG_DIR="D:/Bhaskar_Learning_and_Development/Kafka_By_Sergey_Kargopolov/KAFKA_BASIC/kafka/logs"
 ./kafka-server-start.sh ../config/kraft/server-1.properties
