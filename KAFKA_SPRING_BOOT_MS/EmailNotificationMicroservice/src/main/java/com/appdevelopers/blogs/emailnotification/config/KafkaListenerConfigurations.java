@@ -33,7 +33,7 @@ public class KafkaListenerConfigurations {
     @Value("${spring.kafka.consumer.value-deserializer}")
     private String valueDeserialiazation;
 
-    @Value("${spring.kafka.consumer.group-id}")
+    @Value("${consumer.group-id}")
     private String consumerGroupId;
 
     @Value("${spring.kafka.consumer.properties.spring.json.trusted.packages}")
