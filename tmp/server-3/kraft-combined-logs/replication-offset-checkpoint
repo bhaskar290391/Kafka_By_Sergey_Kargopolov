@@ -5,8 +5,8 @@ __transaction_state 6 0
 __transaction_state 16 0
 __transaction_state 30 0
 __transaction_state 21 0
-__transaction_state 10 0
-deposit-money-topic 0 2
+__transaction_state 10 5
+deposit-money-topic 0 4
 __transaction_state 41 0
 __transaction_state 43 0
 __transaction_state 49 0
