@@ -6,6 +6,7 @@ import com.appdevelopers.blogs.emailnotification.exception.RetryableException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -45,10 +46,13 @@ public class ProductCreatedhandler {
     public void handle(ProductCreatedEvent product){
         logger.info("Event received from Producer ==> "+product.getTitle());
         try{
-            String requestUrl="http://localhost:8082/response/500";
+            String requestUrl="http://localhost:8082/response/200";
 
             ResponseEntity<String> response= template.exchange(requestUrl, HttpMethod.GET,null,String.class);
 
+            if(response.getStatusCode().value() == HttpStatus.OK.value()){
+                logger.info("Response Received ==> "+response.getBody());
+            }
 
         }catch (ResourceAccessException ex){
             logger.error("===> ResourceAccessException "+ex.getMessage());
