@@ -141,7 +141,7 @@ eplicas=2
 
 
 ## consume new message from kafka producer
-./kafka-console-consumer.sh --topic my-topic  --bootstrap-server [::1]:9092
+./kafka-console-consumer.sh --topic orders-event-topic  --bootstrap-server [::1]:9092
 
 ## consume message and display in key value pair
 ./kafka-console-consumer.sh --topic product-created-event-topic.dlt  --property print.key=true --property print.value=true --from-beginning --bootstrap-server [::1]:9092

@@ -408,3 +408,5 @@
 [2026-06-16 18:28:28,683] INFO [QuorumController id=2] Replaying ProducerIdsRecord ProducerIdsRecord(brokerId=2, brokerEpoch=6, nextProducerId=1000) (org.apache.kafka.controller.ProducerIdControlManager)
 [2026-06-16 18:28:28,683] INFO [QuorumController id=3] Replaying ProducerIdsRecord ProducerIdsRecord(brokerId=2, brokerEpoch=6, nextProducerId=1000) (org.apache.kafka.controller.ProducerIdControlManager)
 [2026-06-16 20:46:36,129] INFO [QuorumController id=1] Replaying ProducerIdsRecord ProducerIdsRecord(brokerId=3, brokerEpoch=88, nextProducerId=2000) (org.apache.kafka.controller.ProducerIdControlManager)
+[2026-06-16 20:46:36,667] INFO [QuorumController id=3] Replaying ProducerIdsRecord ProducerIdsRecord(brokerId=3, brokerEpoch=88, nextProducerId=2000) (org.apache.kafka.controller.ProducerIdControlManager)
+[2026-06-16 20:46:36,667] INFO [QuorumController id=2] Replaying ProducerIdsRecord ProducerIdsRecord(brokerId=3, brokerEpoch=88, nextProducerId=2000) (org.apache.kafka.controller.ProducerIdControlManager)
