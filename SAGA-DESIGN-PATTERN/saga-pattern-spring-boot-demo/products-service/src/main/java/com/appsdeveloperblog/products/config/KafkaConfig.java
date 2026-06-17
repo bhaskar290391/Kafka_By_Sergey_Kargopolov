@@ -11,20 +11,21 @@ import org.springframework.kafka.core.ProducerFactory;
 @Configuration
 public class KafkaConfig {
 
-	@Value("${products.event.topic.name}")
-	String productEventTopicName;
+    @Value("${products.events.topic.name}")
+    private String productsEventsTopicName;
+    private final static Integer TOPIC_REPLICATION_FACTOR=3;
+    private final static Integer TOPIC_PARTITIONS=3;
 
-	private final static Integer Topic_Partitions = 3;
-	private final static Integer Topic_Replication_Factors = 3;
+    @Bean
+    KafkaTemplate<String, Object> kafkaTemplate(ProducerFactory<String, Object> producerFactory) {
+        return new KafkaTemplate<>(producerFactory);
+    }
 
-	@Bean
-	KafkaTemplate<String, Object> kafkaTemplate(ProducerFactory<String, Object> producerFactory) {
-		return new KafkaTemplate<>(producerFactory);
-	}
-
-	@Bean
-	NewTopic createProductCommandTopic() {
-		return TopicBuilder.name(productEventTopicName).partitions(Topic_Partitions).replicas(Topic_Replication_Factors)
-				.build();
-	}
+    @Bean
+    NewTopic createProductsEventsTopic() {
+        return TopicBuilder.name(productsEventsTopicName)
+                .partitions(TOPIC_PARTITIONS)
+                .replicas(TOPIC_REPLICATION_FACTOR)
+                .build();
+    }
 }
