@@ -14,7 +14,7 @@ public class KafkaConfig {
     @Value("${orders.event.topic.name}")
     private String orderEventTopicName;
     
-    @Value("${products.event.topic.name}")
+    @Value("${products.commands.topic.name}")
     private String productEventTopicName;
     
     private final static Integer Topic_Partitions=3;

@@ -7,7 +7,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-import com.appsdeveloperblog.core.commands.ProductCommandsEvent;
+import com.appsdeveloperblog.core.commands.ReserveProductCommand;
 import com.appsdeveloperblog.core.event.OrderCreatedEvent;
 import com.appsdeveloperblog.core.types.OrderStatus;
 import com.appsdeveloperblog.orders.service.OrderHistoryService;
@@ -16,7 +16,7 @@ import com.appsdeveloperblog.orders.service.OrderHistoryService;
 @KafkaListener(topics = { "${orders.event.topic.name}" })
 public class OrderSaga {
 
-	@Value("${products.event.topic.name}")
+	@Value("${products.commands.topic.name}")
 	private String productEventTopicName;
 
 	private OrderHistoryService orderHistoryServicel;
@@ -31,7 +31,7 @@ public class OrderSaga {
 	@KafkaHandler
 	public void handleEvent(@Payload OrderCreatedEvent orderCreatedEvent) {
 
-		ProductCommandsEvent productCommands = new ProductCommandsEvent(orderCreatedEvent.getProductId(),
+		ReserveProductCommand productCommands = new ReserveProductCommand(orderCreatedEvent.getProductId(),
 				orderCreatedEvent.getOrderId(), orderCreatedEvent.getProductQuantity());
 
 		kafkaTemplate.send(productEventTopicName, productCommands);
